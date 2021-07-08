@@ -40,6 +40,7 @@ if ($status == false) {
   <meta name="description" content="">
   <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
   <meta name="generator" content="Jekyll v4.0.1">
+  <link rel="icon" href="img/favicon.ico">
   <title>Fish example · Bootstrap</title>
 
   <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/album/">
@@ -119,7 +120,7 @@ if ($status == false) {
     <section class="jumbotron text-center top-img">
       <div class="container">
         <h1>おさかなシェア</h1>
-        <p class="lead text-muted"><br>たくさん釣れた魚、シェアしたい。<br><br>持ち帰るのも困るほど大漁だった日は、<br>おさかなシェアで魚を貰ってくれる人を見つけましょう</p>
+        <p class="lead text-muted"><br>たくさん釣れた魚、シェアしたい。<br><br>持ち帰るのも困るほど大漁だった日は、<br>おさかなシェアで魚を貰ってくれる人を見つけましょう<br>貰い手も絶賛募集中!!</p>
         <p>
           <a href="new_resister/new_register_input.php" class="btn btn-primary my-2">新規会員登録</a><br>
           <a href="give/give_read.php" class="btn btn-secondary my-2">募集中の魚を見る</a>
