@@ -38,7 +38,6 @@ if ($status == false) {
         $output .= "</div>";
         $output .= "</div>";
     }
-    //print($output);
 }
 
 
