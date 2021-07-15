@@ -1,13 +1,20 @@
 <?php
+// 管理者用ユーザー一覧(未編集)
+
 ini_set('display_errors', 1);
 ini_set('error_reporting', E_ALL);
+
+// session check
+session_start();
+check_session_id();
+include("header_and_footer/admin_header.php");
+include("header_and_footer/admin_footer.php");
 
 // 参照する
 include('../functions.php');
 
 // DB接続情報
 $pdo = connect_to_db();
-// echo ('ok');
 
 
 // 参照はSELECT文!
@@ -30,7 +37,7 @@ if ($status == false) {
     $output = "";
     foreach ($result as $record) {
         $output .= "<div class='card shadow-sm'>";
-        $output .= "<img class='card-img-top' src='../fish/kijihata.jpeg' alt=''>";
+        $output .= "<img class='card-img-top' src='../img/fisherman.jpeg' alt=''>";
         $output .= "<div class='card-body'><strong>{$record["title"]}</strong><br><p class='card-text'>{$record["detail"]}<br>受け渡し場所:{$record["place"]}<br>申込期限:{$record["deadline"]}</p></div>";
         $output .= "<div class='card-footer'>";
         $output .= "<div class='btn-group'>";
@@ -53,14 +60,14 @@ if ($status == false) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>おさかな一覧</title>
+    <title>ユーザー一覧</title>
     <!-- Bootstrap core CSS -->
     <link href="../bootstrap.css" rel="stylesheet">
 
 </head>
 
 <body>
-    <header>受けとり募集中一覧</header>
+    <header>ユーザー一覧</header>
 
     <div class="card-columns">
 

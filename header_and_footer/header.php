@@ -8,13 +8,13 @@ $header = '
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v4.0.1">
-    <link rel="icon" href="img/favicon.ico">
+    <link rel="icon" href="http://localhost/DEV8/album/img/favicon.ico">
     <title>Fish example · Bootstrap</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/album/">
 
     <!-- Bootstrap core CSS -->
-    <link href="bootstrap.css" rel="stylesheet">
+    <link href="http://localhost/DEV8/album/bootstrap.css" rel="stylesheet">
 
     <style>
         .bd-placeholder-img {
@@ -41,7 +41,7 @@ $header = '
 
     </style>
     <!-- Custom styles for this template -->
-    <link href="album.css" rel="stylesheet">
+    <link href="http://localhost/DEV8/album/album.css" rel="stylesheet">
 </head>
 
 <body>
@@ -58,8 +58,8 @@ $header = '
                 <div class="col-sm-4 offset-md-1 py-4">
                     <h4 class="text-white">Menu</h4>
                     <ul class="list-unstyled">
-                        <li><a href="#" class="text-white">マイページ</a></li>
-                        <li><a href="give/give_each.php" class="text-white">出品中一覧</a></li>
+                        <li><a href="http://localhost/DEV8/album/mypage/mypage_top.php" class="text-white">マイページ</a></li>
+                        <li><a href="http://localhost/DEV8/album/give/give_each.php" class="text-white">出品中一覧</a></li>
                         <li><a href="#" class="text-white">Infomation</a></li>
                     </ul>
                 </div>
@@ -76,6 +76,7 @@ $header = '
             <circle cx="12" cy="13" r="4" />
           </svg> -->
                 <small id="logout">ログアウト</small>
+            
                 
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">

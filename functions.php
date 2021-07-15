@@ -3,9 +3,11 @@
 // session_start();
 // include('functions.php');
 // check_session_id();
-// include("header.php");
-// include("footer.php");
+// include("header_and_footer/header.php");
+// include("header_and_footer/footer.php");
 // $pdo = connect_to_db();
+// ini_set('display_errors', 1);
+// ini_set('error_reporting', E_ALL);
 
 
 // DB接続
@@ -33,5 +35,3 @@ function check_session_id()
         $_SESSION['session_id'] = session_id();
     }
 }
-
-// 

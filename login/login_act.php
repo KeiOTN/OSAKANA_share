@@ -1,5 +1,5 @@
-
 <?php
+
 session_start();
 include('../functions.php');
 
@@ -24,13 +24,26 @@ if ($status == false) {
         echo '<a href="login.php">login</a>';
         exit();
     } else {
-        // DBにデータがあればセッション変数に格納
-        $_SESSION = array();
-        $_SESSION["session_id"] = session_id();
-        $_SESSION["is_admin"] = $val["is_admin"];
-        $_SESSION["username"] = $val["username"];
-        $_SESSION["user_id"] = $val["id"];
-        header("Location:../index_member.php");
-        exit();
+        // 管理者の場合
+        if ($val["is_admin"] == 1) {
+            // echo ('管理者です');
+            // exit();
+            $_SESSION = array();
+            $_SESSION["session_id"] = session_id();
+            $_SESSION["username"] = $val["username"];
+            $_SESSION["user_id"] = $val["id"];
+            header("Location:../admin/admin_top.php");
+            exit();
+        } else {
+            // 管理者以外
+            // DBにデータがあればセッション変数に格納
+            $_SESSION = array();
+            $_SESSION["session_id"] = session_id();
+            $_SESSION["is_admin"] = $val["is_admin"];
+            $_SESSION["username"] = $val["username"];
+            $_SESSION["user_id"] = $val["id"];
+            header("Location:../index_member.php");
+            exit();
+        }
     }
 }

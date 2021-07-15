@@ -40,6 +40,6 @@ if ($status == false) {
 } else {
     // 登録ページへ移動
     // $alert = "<script type='text/javascript'>alert('登録が完了しました');</script>";
-    // echo $alert;
-    header('Location:../index_member.php');
+    // var_dump($alert);
+    header('Location: ../index_member.php');
 }
