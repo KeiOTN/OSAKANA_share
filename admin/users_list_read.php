@@ -4,14 +4,14 @@
 ini_set('display_errors', 1);
 ini_set('error_reporting', E_ALL);
 
+// 参照する
+include('../functions.php');
+
 // session check
 session_start();
 check_session_id();
-include("header_and_footer/admin_header.php");
-include("header_and_footer/admin_footer.php");
-
-// 参照する
-include('../functions.php');
+include("../header_and_footer/admin_header.php");
+include("../header_and_footer/admin_footer.php");
 
 // DB接続情報
 $pdo = connect_to_db();
@@ -29,22 +29,22 @@ if ($status == false) {
     exit('sqlError:' . $error[2]);
 } else {
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC); // fetchAll()で全部取れる! あとは配列で処理!!
-    echo '<pre>';
+    // echo '<pre>';
     // var_dump($result[0]['todo']);
-    var_dump($result);
-    echo '</pre>';
+    // var_dump($result);
+    // echo '</pre>';
     // exit();
     $output = "";
     foreach ($result as $record) {
         $output .= "<div class='card shadow-sm'>";
         $output .= "<img class='card-img-top' src='../img/fisherman.jpeg' alt=''>";
-        $output .= "<div class='card-body'><strong>{$record["title"]}</strong><br><p class='card-text'>{$record["detail"]}<br>受け渡し場所:{$record["place"]}<br>申込期限:{$record["deadline"]}</p></div>";
+        $output .= "<div class='card-body'><strong>{$record["username"]}</strong><br><p class='card-text'>ID:{$record["id"]}<br>email:{$record["email"]}<br>password:{$record["password"]}<br>登録日:{$record["created_at"]}</p></div>";
         $output .= "<div class='card-footer'>";
         $output .= "<div class='btn-group'>";
         $output .= "<button type='button' class='btn btn-sm btn-outline-secondary'>詳細</button>";
-        $output .= "<button type='button' class='btn btn-sm btn-outline-secondary'>編集</button>";
+        // $output .= "<button type='button' class='btn btn-sm btn-outline-secondary'>編集</button>";
         $output .= "</div>";
-        $output .= "<small class='text-muted'>投稿日時:{$record["updated_at"]}</small>";
+        // $output .= "<small class='text-muted'>投稿日時:{$record["updated_at"]}</small>";
         $output .= "</div>";
         $output .= "</div>";
     }

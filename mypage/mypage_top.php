@@ -38,7 +38,7 @@ if ($status == false) {
 
         $output .= "<div>";
         $output .= "{$record["username"]}さんから友達リクエストが届いています。";
-        $output .= "<button class='btn btn-outline-danger btn-sm my-2'><a href='../friends/check_profile.php?user_id=$user_id&from_id={$record["from_id"]}'>プロフィールを確認する</a></button>";
+        $output .= "<button class='btn btn-outline-warning btn-sm my-2'><a href='../friends/check_profile.php?user_id=$user_id&from_id={$record["from_id"]}'>プロフィールを確認する</a></button>";
         $output .= "</div>";
     }
 }
@@ -66,9 +66,9 @@ if ($status == false) {
             <div>
                 <h4>Menu</h4>
                 <ul>
-                    <li><a href="#">取引一覧</a></li>
-                    <li><a href="#">友人一覧</a></li>
-                    <li><a href="#">something...</a></li>
+                    <li><a href="#">取引一覧(未)</a></li>
+                    <li><a href="#">友人一覧(未)</a></li>
+                    <li><a href="http://localhost/DEV8/album/mypage/profile_each.php?id=<?= $record['id'] ?>">プロフィールを確認/編集</a></li>
                 </ul>
             </div>
         </div>

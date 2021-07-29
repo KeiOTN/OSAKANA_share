@@ -30,11 +30,11 @@ if ($status == false) {
     $output = "";
     foreach ($result as $record) {
         $output .= "<div class='card shadow-sm'>";
-        $output .= "<img class='card-img-top' src='fish/kijihata.jpeg' alt=''>";
+        $output .= "<img class='card-img-top' src='give/{$record["image"]}' alt=''>";
         $output .= "<div class='card-body'><strong>{$record["title"]}</strong><br><p class='card-text'>{$record["detail"]}<br>受け渡し場所:{$record["place"]}<br>申込期限:{$record["deadline"]}</p></div>";
         $output .= "<div class='card-footer'>";
         $output .= "<div class='btn-group'>";
-        $output .= "<button type='button' class='btn btn-sm btn-outline-secondary' href='#'>詳細</button>";
+        $output .= "<button type='button' class='btn btn-sm btn-outline-secondary'><a href='give/give_detail.php?fish_id={$record["id"]}'>詳細</button>";
         $output .= "<button type='button' class='btn btn-sm btn-outline-secondary'><a href='like/like_create.php?user_id=$user_id&fish_id={$record["id"]}'>❤️{$record["cnt"]}</a></button>";
         $output .= "</div>";
         $output .= "<small class='text-muted'>投稿日時:{$record["updated_at"]}</small>";

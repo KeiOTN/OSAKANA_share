@@ -365,7 +365,7 @@ Last change	: 2015/03/27
                 <div class="main-login-form">
                     <div class="login-group">
                         <div class="form-group">
-                            <label for="reg_username" class="sr-only">Email address</label>
+                            <label for="reg_username" class="sr-only">User name</label>
                             <input type="text" class="form-control" id="reg_username" name="username" placeholder="ユーザー名">
                         </div>
                         <div class="form-group">

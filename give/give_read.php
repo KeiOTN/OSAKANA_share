@@ -32,7 +32,7 @@ if ($status == false) {
     $output = "";
     foreach ($result as $record) {
         $output .= "<div class='card shadow-sm'>";
-        $output .= "<img class='card-img-top' src='../fish/kijihata.jpeg' alt=''>";
+        $output .= "<img class='card-img-top' src='{$record["image"]}' alt=''>";
         $output .= "<div class='card-body'><strong>{$record["title"]}</strong><br><p class='card-text'>{$record["detail"]}<br>受け渡し場所:{$record["place"]}<br>申込期限:{$record["deadline"]}<br>投稿者:{$record["username"]}</p></div>";
         $output .= "<div class='card-footer'>";
         $output .= "<div class='btn-group'>";

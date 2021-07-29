@@ -73,7 +73,12 @@ $pdo = connect_to_db();
             <div class="panel panel-default">
                 <div class="panel-heading"><strong>シェアしていただける魚について入力してください</strong></div>
                 <div class="panel-body">
-                    <form action="give_create.php" method="POST">
+                    <form action="create_file.php" method="POST" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label class="control-label">添付画像</label>
+                            <input class="form-control" type="file" name="upfile" accept="image/*" capture="camera">
+                        </div>
+
                         <div class="form-group">
                             <label class="control-label">タイトル</label>
                             <input class="form-control" type="text" name="title">

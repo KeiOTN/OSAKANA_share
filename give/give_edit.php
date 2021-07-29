@@ -1,4 +1,7 @@
 <?php
+// 画像の再編集ができない。。。
+// 参考サイト
+// https://vertys.net/form-post-file-view-and-delete/
 // var_dump($_GET);
 // exit();
 ini_set('display_errors', 1);
@@ -26,7 +29,11 @@ if ($status == false) {
     exit();
 } else {
     $record = $stmt->fetch(PDO::FETCH_ASSOC);
+    // var_dump($record["image"]);
+    // exit();
 }
+
+$img = $record["image"];
 
 
 ?>
@@ -37,7 +44,7 @@ if ($status == false) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>提供できる魚（編集画面）</title>
+    <title>シェア魚（編集画面）</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <!-- JQuery -->
@@ -67,6 +74,15 @@ if ($status == false) {
                             <label class="control-label"></label>
                             <input class="form-control" type="hidden" name="id" value="<?= $record["id"] ?>">
                         </div>
+
+                        <div class="form-group">
+                            <label class="control-label">添付画像</label>
+                            <input id="img-input" class="form-control" type="file" name="upfile" accept="image/*" capture="camera" value="<?= $record['image'] ?>">
+                        </div>
+                        <!-- <div class="form-group">
+                            <label class="control-label"></label>
+                            <input class="form-control" type="file" name="upfile" accept="image/*" capture="camera" value="<?= $record['image'] ?>">
+                        </div> -->
                         <div class="form-group">
                             <label class="control-label">タイトル</label>
                             <input class="form-control" type="text" name="title" value="<?= $record['title'] ?>">
@@ -97,6 +113,7 @@ if ($status == false) {
             </div>
         </div>
     </main>
+
     <!-- Bootstrap JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>

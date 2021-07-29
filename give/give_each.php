@@ -26,12 +26,15 @@ if ($status == false) {
     exit();
 } else {
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    // echo '<pre>';
+    // var_dump($result);
+    // echo '<pre>';
 
     //  データを表示しやすいようにまとめる
     $output = "";
     foreach ($result as $record) {
         $output .= "<div class='card shadow-sm'>";
-        $output .= "<img class='card-img-top' src='../fish/kijihata.jpeg' alt=''>";
+        $output .= "<img class='card-img-top' src='{$record["image"]}' alt=''>";
         $output .= "<div class='card-body'><strong>{$record["title"]}</strong><br><p class='card-text'>{$record["detail"]}<br>受け渡し場所:{$record["place"]}<br>申込期限:{$record["deadline"]}</p></div>";
         $output .= "<div class='card-footer'>";
         $output .= "<div class='btn-group'>";
@@ -44,53 +47,6 @@ if ($status == false) {
     }
     // print($output);
 }
-
-
-
-
-
-
-
-// 参照はSELECT文!
-// $sql = 'SELECT * FROM fish_list';
-// $stmt = $pdo->prepare($sql);
-// $status = $stmt->execute();
-// $statusにSQLの実行結果が入る(取得したデータではない点に注意)
-
-//  データを表示しやすいようにまとめる
-// if ($status == false) {
-//     $error = $stmt->errorInfo(); // 失敗時はエラー出力
-//     exit('sqlError:' . $error[2]);
-// } else {
-//     $result = $stmt->fetchAll(PDO::FETCH_ASSOC); 
-// fetchAll()で全部取れる! あとは配列で処理!!
-// echo '<pre>';
-// var_dump($result[0]['todo']);
-// var_dump($result);
-// echo '</pre>';
-// exit();
-
-// fetchAllしたあとに
-// $_SESSION["user_id"]=$record["created_user_id"]のデータだけ取り出したい
-
-
-// $output = "";
-// foreach ($result as $record) {
-//     $output .= "<div class='card shadow-sm'>";
-//     $output .= "<img class='card-img-top' src='../fish/kijihata.jpeg' alt=''>";
-//     $output .= "<div class='card-body'><strong>{$record["title"]}</strong><br><p class='card-text'>{$record["detail"]}<br>受け渡し場所:{$record["place"]}<br>申込期限:{$record["deadline"]}</p></div>";
-//     $output .= "<div class='card-footer'>";
-//     $output .= "<div class='btn-group'>";
-//     $output .= "<button type='button' class='btn btn-sm btn-outline-secondary'>詳細</button>";
-//     $output .= "<button type='button' class='btn btn-sm btn-outline-secondary'><a href='give_edit.php?id={$record["id"]}'>編集</a></button>";
-//     $output .= "</div>";
-//     $output .= "<small class='text-muted'>投稿日時:{$record["updated_at"]}</small>";
-//     $output .= "</div>";
-//     $output .= "</div>";
-// }
-//print($output);
-// }
-
 
 ?>
 
